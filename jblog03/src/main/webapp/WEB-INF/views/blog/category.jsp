@@ -11,7 +11,6 @@
 </head>
 <body>
 	<div id="container">
-	
 		<div id="header">
 			<c:import url="/WEB-INF/views/includes/header.jsp"/>
 		</div>
@@ -19,17 +18,17 @@
 			<div id="content">
 				<div class="blog-content">
 					<c:choose>
-						<c:when test="${empty postList }">
+						<c:when test="${empty categoryPostList }">
 							<p> 해당 카테고리에 게시글이 존재하지 않습니다. </p>
 						</c:when>
 						<c:otherwise>
-							<h4>${postList[0].title}</h4>
-							<p>${postList[0].contents}</p>
+							<h4>${categoryPostList[0].title}</h4>
+							<p>${categoryPostList[0].contents}</p>
 						</c:otherwise>
 					</c:choose>
 				</div>
 				<ul class="blog-list">
-					<c:forEach items="${postList }" var="postVo" varStatus="status">
+					<c:forEach items="${categoryPostList }" var="postVo" varStatus="status">
 						<li><a href="${pageContext.request.contextPath}/${blogVo.blogId}/${postVo.categoryNo}/${postVo.no}">${postVo.title } </a> <span>${postVo.date }</span>	</li>
 					</c:forEach>
 				</ul>
