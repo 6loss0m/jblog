@@ -34,6 +34,10 @@
 			<mvc:mapping path="/user/logout"/>
 			<bean class="com.poscodx.jblog.security.LogoutInterceptor" />
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/*/admin/*"/>
+			<bean class="com.poscodx.jblog.security.AuthInterceptor" />
+		</mvc:interceptor>
 	</mvc:interceptors>
 	
 	<!-- Multipart Resolver -->
