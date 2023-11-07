@@ -108,7 +108,7 @@ public class BlogController {
 	}
 
 	// GET
-	@RequestMapping(value = {"/admin/category","/admin/category/{categoryNo}"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/category", method = RequestMethod.GET)
 	public String adminCategory(
 			@PathVariable("id") String blogId,
 			@PathVariable("categoryNo") Optional<Long> categoryNo,
